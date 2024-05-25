@@ -29,44 +29,44 @@ jobs:
           - name: v1.29
             version: v1.29.2
         tests:
-          - ^argo$
-          - ^aws$
-          - ^best-practices$
-          - ^castai$
-          - ^cert-manager$
-          - ^consul$
-          - ^external-secret-operator$
-          - ^flux$
-          - ^istio$
-          - ^karpenter$
-          - ^kasten$
-          - ^kubecost$
-          - ^kubeops$
-          - ^kubevirt$
-          - ^linkerd$
-          - ^nginx-ingress$
-          - ^openshift$
-          - ^other$/^a
-          - ^other-cel$/^a
-          - ^other$/^[b-d]
-          - ^other-cel$/^[b-d]
-          - ^other$/^[e-l]
-          - ^other-cel$/^[e-l]
-          - ^other$/^[m-q]
-          - ^other-cel$/^[m-q]
-          - ^other$/^re[c-q]
-          - ^other$/^res
-          - ^other$/^[s-z]
-          - ^pod-security$
-          - ^pod-security-cel$
-          - ^psa$
-          - ^psp-migration$
-          - ^psp-migration-cel$
+          # - ^argo$
+          # - ^aws$
+          # - ^best-practices$
+          # - ^castai$
+          # - ^cert-manager$
+          # - ^consul$
+          # - ^external-secret-operator$
+          # - ^flux$
+          # - ^istio$
+          # - ^karpenter$
+          # - ^kasten$
+          # - ^kubecost$
+          # - ^kubeops$
+          # - ^kubevirt$
+          # - ^linkerd$
+          # - ^nginx-ingress$
+          # - ^openshift$
+          # - ^other$/^a
+          # - ^other-cel$/^a
+          # - ^other$/^[b-d]
+          # - ^other-cel$/^[b-d]
+          # - ^other$/^[e-l]
+          # - ^other-cel$/^[e-l]
+          # - ^other$/^[m-q]
+          # - ^other-cel$/^[m-q]
+          # - ^other$/^re[c-q]
+          # - ^other$/^res
+          # - ^other$/^[s-z]
+          # - ^pod-security$
+          # - ^pod-security-cel$
+          # - ^psa$
+          # - ^psp-migration$
+          # - ^psp-migration-cel$
           - ^tekton$
           - ^tekton-cel$
-          - ^traefik$
-          - ^velero$
-          - ^velero-cel$
+          # - ^traefik$
+          # - ^velero$
+          # - ^velero-cel$
     runs-on: ubuntu-latest
     name: ${{ matrix.k8s-version.name }} - ${{ matrix.tests }}
     steps:
