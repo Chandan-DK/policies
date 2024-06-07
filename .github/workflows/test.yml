@@ -101,7 +101,7 @@ jobs:
       - name: Install latest kyverno
         run: |
           set -e
-          kubectl create -f https://github.com/kyverno/kyverno/raw/main/config/install-latest-testing.yaml
+          kubectl create -f https://github.com/kyverno/kyverno/blob/v1.11.0/config/install-latest-testing.yaml
       - name: Wait for kyverno ready
         run: |
           set -e
