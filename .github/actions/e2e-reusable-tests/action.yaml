@@ -10,13 +10,13 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Checkout
-      uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
     - name: Setup Go
       uses: actions/setup-go@0a12ed9d6a96ab950c8f026ed9f722fe0da7ef32 # v5.0.2
+      shell: bash
       with:
         go-version: ~1.21.1
     - name: Install Tools
+      shell: bash
       run: |
         set -e
         curl -LO "https://dl.k8s.io/release/${{ inputs.k8s-version }}/bin/linux/amd64/kubectl"
@@ -34,24 +34,29 @@ runs:
     - name: Install latest Kyverno CLI
       uses: kyverno/action-install-cli@fcee92fca5c883169ef9927acf543e0b5fc58289 # v0.2.0
     - name: Create kind cluster
+      shell: bash
       run: |
         set -e
         kind create cluster --image kindest/node:${{ inputs.k8s-version }} --config ./.github/kind.yml
     - name: Install latest kyverno
+      shell: bash
       run: |
         set -e
         kubectl create -f https://github.com/kyverno/kyverno/raw/main/config/install-latest-testing.yaml
     - name: Wait for kyverno ready
+      shell: bash
       run: |
         set -e
         kubectl wait --namespace kyverno --for=condition=ready pod --selector '!job-name' --timeout=60s
     - name: Install CRDs
+      shell: bash
       run: |
         set -e
         kubectl apply -f ./.chainsaw/crds
     - name: Install Chainsaw
       uses: kyverno/action-install-chainsaw@5d00c353f61f44f3b492c673420202d1b1374c3f # v0.2.6
     - name: Test with Chainsaw
+      shell: bash
       run: |
         set -e
         chainsaw test --config .chainsaw.yaml --include-test-regex '^chainsaw$/${{ inputs.tests }}' --no-color=false
