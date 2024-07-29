@@ -52,8 +52,6 @@ runs:
     - name: Install Chainsaw
       uses: kyverno/action-install-chainsaw@5d00c353f61f44f3b492c673420202d1b1374c3f # v0.2.6
     - name: Test with Chainsaw
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         set -e
         chainsaw test --config .chainsaw.yaml --include-test-regex '^chainsaw$/${{ inputs.tests }}' --no-color=false
