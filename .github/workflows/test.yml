@@ -66,7 +66,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - name: Run Non CEL Tests
-        uses: ./.github/actions/e2e-reusable-tests
+        uses: .github/actions/e2e-reusable-tests
         with:
           k8s-version: ${{ matrix.k8s-version.version }}
           tests: ${{ matrix.tests }}
