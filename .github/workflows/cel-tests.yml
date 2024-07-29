@@ -55,7 +55,7 @@ jobs:
     name: ${{ matrix.k8s-version.name }} - ${{ matrix.tests }}
     steps:
       - name: Run CEL Tests
-        uses: ./.github/workflows/e2e-reusable-steps.yml
+        uses: ./.github/actions/e2e-reusable-tests
         with:
           k8s-version: ${{ matrix.k8s-version.version }}
           tests: ${{ matrix.tests }}
