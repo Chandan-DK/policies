@@ -6,8 +6,7 @@ on:
   workflow_dispatch: {}
   pull_request:
     branches:
-      - 'main'
-      - 'test-cel-workflow-composite'
+      - '*'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
