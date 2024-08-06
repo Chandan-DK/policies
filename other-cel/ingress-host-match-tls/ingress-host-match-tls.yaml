@@ -33,7 +33,7 @@ spec:
       cel:
         variables:
           - name: tls
-            expression: "has(object.spec.tls) ? object.spec.tls : []"
+            expression: "object.spec.?tls.orValue([])"
         expressions:
           - expression: >-
               object.spec.rules.all(rule, 
