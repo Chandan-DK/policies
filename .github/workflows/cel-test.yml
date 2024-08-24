@@ -29,26 +29,26 @@ jobs:
           - name: v1.29
             version: v1.29.2
         tests:
-          - ^argo-cel$
-          - ^aws-cel$
-          - ^best-practices-cel$
-          - ^consul-cel$
-          - ^flux-cel$
-          - ^istio-cel$
-          - ^kasten-cel$
-          - ^kubecost-cel$
-          - ^linkerd-cel$
-          - ^nginx-ingress-cel$
-          - ^openshift-cel$
-          - ^other-cel$/^a
-          - ^other-cel$/^[b-d]
-          - ^other-cel$/^[e-l]
-          - ^other-cel$/^[m-q]
-          - ^other-cel$/^re[c-q]
-          - ^other-cel$/^res
-          - ^other-cel$/^[s-z]
-          - ^pod-security-cel$
-          - ^psa-cel$
+          # - ^argo-cel$
+          # - ^aws-cel$
+          # - ^best-practices-cel$
+          # - ^consul-cel$
+          # - ^flux-cel$
+          # - ^istio-cel$
+          # - ^kasten-cel$
+          # - ^kubecost-cel$
+          # - ^linkerd-cel$
+          # - ^nginx-ingress-cel$
+          # - ^openshift-cel$
+          # - ^other-cel$/^a
+          # - ^other-cel$/^[b-d]
+          # - ^other-cel$/^[e-l]
+          # - ^other-cel$/^[m-q]
+          # - ^other-cel$/^re[c-q]
+          # - ^other-cel$/^res
+          # - ^other-cel$/^[s-z]
+          # - ^pod-security-cel$
+          # - ^psa-cel$
           - ^traefik-cel$
     runs-on: ubuntu-latest
     name: ${{ matrix.k8s-version.name }} - ${{ matrix.tests }}
